@@ -25,11 +25,11 @@ class gameWindow extends Component {
     }
 
     render() {
-        const { isVisible } = this.state;
+
         return(
             <>
                 <Container>
-                    <Segment raised>
+                    <Segment className="questions-container" raised>
                         <Box 
                             className="box"
                             pose={this.state.isVisible ? 'visible' : 'hidden'} 

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import posed from 'react-pose';
 import './question.css';
 
@@ -31,10 +30,10 @@ class Question extends React.PureComponent {
 
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
-        <Item className="item" />
-        <Item className="item" />
-        <Item className="item" />
-        <Item className="item" />
+        <Item className="item" >
+            Question
+        </Item>
+        
       </Sidebar>
     );
   }

@@ -14,4 +14,11 @@ body {
     background: #ff1c68;
     transform-origin: 50% 50%;
   }
-  
+
+  .ui.raised.segment.questions-container {
+    height: 50vh;
+  }
+
+  ul.sidebar {
+    height: fit-content;
+  }

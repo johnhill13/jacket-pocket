@@ -31,3 +31,7 @@
     transform: rotate(360deg);
   }
 }
+
+.question-container {
+  height: 50 vh !important;
+}
