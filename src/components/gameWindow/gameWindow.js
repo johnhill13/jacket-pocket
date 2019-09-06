@@ -1,18 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
+import posed from 'react-pose';
 
-const gameWindow = () => {
-    return(
-        <>
-            <Container>
-                <Segment raised>
-                    Pellentesque habitant morbi tristique senectus.
+import './gameWindow.css';
 
-                    
-                </Segment>
-            </Container>    
-        </>
-    )
+
+
+const Box = posed.div({
+    visible: { opacity: 1},
+    hidden: { opacity: 0}
+}); 
+
+
+
+class gameWindow extends Component { 
+    state = { isVisible: true };
+
+
+    componentDidMount() {
+        setInterval(() => {
+            this.setState(prevState => { return {isVisible: !prevState.isVisible }});
+        }, 500);
+    }
+
+    render() {
+        const { isVisible } = this.state;
+        return(
+            <>
+                <Container>
+                    <Segment raised>
+                        <Box 
+                            className="box"
+                            pose={this.state.isVisible ? 'visible' : 'hidden'} 
+                            />
+                    </Segment>
+                </Container>    
+            </>
+        );
+    }
 }
 
 export default gameWindow;
