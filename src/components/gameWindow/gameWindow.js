@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 import posed from 'react-pose';
 import Question from '../question/question'
+import Answer from '../answer/answer'
 import '../question/question';
 import './gameWindow.css';
 
@@ -30,11 +31,12 @@ class gameWindow extends Component {
             <>
                 <Container>
                     <Segment className="questions-container" raised>
-                        <Box 
+                        {/* <Box 
                             className="box"
                             pose={this.state.isVisible ? 'visible' : 'hidden'} 
-                            />
-                    <Question />
+                            /> */}
+                    {/* <Question /> */}
+                    <Answer />
                     </Segment>
                 </Container>    
             </>

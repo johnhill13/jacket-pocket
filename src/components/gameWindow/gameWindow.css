@@ -21,4 +21,5 @@ body {
 
   ul.sidebar {
     height: fit-content;
+    width: -webkit-fill-available;
   }
