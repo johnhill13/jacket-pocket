@@ -35,8 +35,8 @@ class gameWindow extends Component {
                             className="box"
                             pose={this.state.isVisible ? 'visible' : 'hidden'} 
                             /> */}
-                    {/* <Question /> */}
-                    <Answer />
+                        {/* <Question /> */}
+                        <Answer />
                     </Segment>
                 </Container>    
             </>

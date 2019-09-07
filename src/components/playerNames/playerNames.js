@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Container, Segment } from 'semantic-ui-react';
+import { Container, Segment, Grid } from 'semantic-ui-react';
 import posed from 'react-pose';
 import '../question/question';
 import './playerNames.css';
@@ -23,30 +23,49 @@ class playerNames extends Component {
 
         return(
             <>
-            <Container Grid>
+            <Container>
                 <Segment className="questions-container" raised>
-                    <Box
-                        className="box item"
-                        pose={this.state.isVisible ? 'visible' : 'hidden'} 
-                    />
-                    <Box 
-                        className="box item"
-                        pose={this.state.isVisible ? 'visible' : 'hidden'} 
-                    />
-                    <Box 
-                        className="box item"
-                        pose={this.state.isVisible ? 'visible' : 'hidden'} 
-                    />
-                    <Box 
-                        className="box item"
-                        pose={this.state.isVisible ? 'visible' : 'hidden'} 
-                    />
+                    <Grid>
+                        <Grid.Row columns={4}>
+                            <Grid.Column>
+                                <Box
+                                    className="box"
+                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
+                                    <h1>player 1</h1>
+                                </Box>
+                            </Grid.Column>
+                            <Grid.Column>
+                                <Box
+                                    className="box"
+                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
+                                    <h1>player 2</h1>
+                                </Box>       
+                            </Grid.Column>
+        
+                            <Grid.Column>
+                                <Box
+                                    className="box"
+                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
+                                    <h1>player 3</h1>
+                                </Box>       
+                            </Grid.Column>
+        
+                            <Grid.Column>
+                                <Box
+                                    className="box"
+                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
+                                    <h1>player 4</h1>
+                                </Box>       
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
                 </Segment>
             </Container>
             </>
         );
     }
 }
+
 
 export default playerNames;
 
