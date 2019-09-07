@@ -30,22 +30,27 @@ body {
     color: white;
   }
   .item:nth-child(1) {
-    background: #f69a9a;
+    background: #DB504A !important
+    ;
   }
   
   .item:nth-child(2) {
-    background: #83ae9b;
+    background: #FF6F59
+    ;
   }
   
   .item:nth-child(3) {
-    background: #ef4566;
+    background: #254441;
   }
   
   .item:nth-child(4) {
-    background: #f9cdae;
+    background: #43AA8B;
   }
   
   .item:nth-child(5) {
-    background: #c8c8a9;
+    background: #FFE5AA;
   }
   
+ div.ui.raised.segment.questions-container {
+    display: grid;
+}

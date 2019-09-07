@@ -1,5 +1,6 @@
 import React from 'react';
 import posed from 'react-pose';
+import { Form, Button } from 'semantic-ui-react';
 import './question.css';
 
 const Sidebar = posed.ul({
@@ -33,7 +34,10 @@ class Question extends React.PureComponent {
         <Item className="item" >
             Question
         </Item>
-        
+        <Form reply>
+          <Form.TextArea />
+          <Button color='yellow' content='Submit Answer'/>
+        </Form>        
       </Sidebar>
     );
   }

@@ -30,23 +30,41 @@ body {
   color: white;
 }
 .item:nth-child(1) {
-  background: #f69a9a;
+  background: #6D998E !important
+  ;
 }
 
 .item:nth-child(2) {
-  background: #83ae9b;
+  background: #7CAEA3 !important
+  ;
 }
 
 .item:nth-child(3) {
-  background: #ef4566;
+  background: #8CC4B7 !important
+  ;
 }
-
 .item:nth-child(4) {
-  background: #f9cdae;
+  background: #6D998E !important
+  ;
 }
 
 .item:nth-child(5) {
-  background: #c8c8a9;
+  background: #7CAEA3 !important
+  ;
+}
+
+.item:nth-child(6) {
+  background: #8CC4B7 !important
+  ;
+}
+.item:nth-child(7) {
+  background: #6D998E !important
+  ;
+}
+
+.item:nth-child(8) {
+  background: #7CAEA3 !important
+  ;
 }
 
 ul.sidebar {
