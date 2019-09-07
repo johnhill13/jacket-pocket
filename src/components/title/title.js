@@ -6,7 +6,7 @@ const title = () => {
     return (
 
         <Container>
-            <Header as='h1' className="jacket-pocket">Jacket Pocket</Header>
+            <Header as='h1' textAlign='center justified' color='yellow' className="jacket-pocket" >Jacket Pocket</Header>
         </Container>
 
     );

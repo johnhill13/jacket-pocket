@@ -54,7 +54,6 @@ class answer extends React.PureComponent {
         <Item className="item" >
             answer
         </Item>
-        
       </Sidebar>
     );
   }

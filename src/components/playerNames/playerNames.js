@@ -24,8 +24,8 @@ class playerNames extends Component {
         return(
             <>
             <Container>
-                    <Grid columns='equal'>
-                        <Grid.Row columns={4}>
+                    <Grid textAlign='center' columns={4} padded>
+                        <Grid.Row>
                             <Grid.Column>
                                 <Box
                                     className=""
@@ -51,7 +51,7 @@ class playerNames extends Component {
                                 <Box
                                     className=""
                                     pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                        <div>
+                                        <div center>
                                             <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
                                             <span>Player 3</span>
                                         </div>   
@@ -80,7 +80,22 @@ class playerNames extends Component {
 export default playerNames;
 
 
-
+{/* <Grid columns='equal'>
+    <Grid.Row>
+        <Grid.Column>
+            <Segment>1</Segment>
+        </Grid.Column>
+        <Grid.Column>
+            <Segment>2</Segment>
+        </Grid.Column>
+        <Grid.Column>
+            <Segment>3</Segment>
+        </Grid.Column>
+        <Grid.Column>
+            <Segment>4</Segment>
+        </Grid.Column>
+    </Grid.Row>
+</Grid> */}
 
 
 
