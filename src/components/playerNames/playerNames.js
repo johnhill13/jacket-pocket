@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Container, Segment, Grid } from 'semantic-ui-react';
+import { Container, Grid, Image } from 'semantic-ui-react';
 import posed from 'react-pose';
 import '../question/question';
 import './playerNames.css';
@@ -24,42 +24,52 @@ class playerNames extends Component {
         return(
             <>
             <Container>
-                <Segment className="questions-container" raised>
-                    <Grid>
+                    <Grid columns='equal'>
                         <Grid.Row columns={4}>
                             <Grid.Column>
                                 <Box
-                                    className="box"
+                                    className=""
                                     pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                    <h1>player 1</h1>
+                                        <div>
+                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
+                                            <span>Player 1</span>
+                                        </div>    
                                 </Box>
                             </Grid.Column>
                             <Grid.Column>
                                 <Box
-                                    className="box"
+                                    className=""
                                     pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                    <h1>player 2</h1>
+                                        <div>
+                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
+                                            <span>Player 2</span>
+                                        </div>   
                                 </Box>       
                             </Grid.Column>
         
                             <Grid.Column>
                                 <Box
-                                    className="box"
+                                    className=""
                                     pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                    <h1>player 3</h1>
+                                        <div>
+                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
+                                            <span>Player 3</span>
+                                        </div>   
                                 </Box>       
                             </Grid.Column>
         
                             <Grid.Column>
                                 <Box
-                                    className="box"
+                                    className=""
                                     pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                    <h1>player 4</h1>
+                                        <div>
+                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
+                                            <span>Player 4</span>
+                                        </div>   
                                 </Box>       
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
-                </Segment>
             </Container>
             </>
         );
