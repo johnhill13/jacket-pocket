@@ -1,6 +1,6 @@
 import React from 'react';
 import posed from 'react-pose';
-import './answer.css';
+import './finalScore.css';
 
 const Sidebar = posed.ul({
   open: {
