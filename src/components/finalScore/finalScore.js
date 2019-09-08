@@ -31,16 +31,16 @@ class score extends React.PureComponent {
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
         <Item className="item" >
-            answer
+            Player 1 : AMT of points
         </Item>
         <Item className="item" >
-            answer
+            Player 2 : AMT of points
         </Item>
         <Item className="item" >
-            answer
+            Player 3 : AMT of points
         </Item>
         <Item className="item" >
-            answer
+            Player 4 : AMT of points
         </Item>
       </Sidebar>
     );

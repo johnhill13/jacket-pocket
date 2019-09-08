@@ -1,0 +1,32 @@
+.item:nth-child(1) {
+    background: #ECA72C !important;
+    text-indent: 1em;
+    min-width: -webkit-fill-available;
+    overflow-wrap: break-word;
+    min-height: 4rem;
+    height: -webkit-fill-available;
+}
+.item:nth-child(2) {
+    background: #ECA72C !important;
+    text-indent: 1em;
+    min-width: -webkit-fill-available;
+    overflow-wrap: break-word;
+    min-height: 4rem;
+    height: -webkit-fill-available;
+}
+.item:nth-child(3) {
+    background: #ECA72C !important;
+    text-indent: 1em;
+    min-width: -webkit-fill-available;
+    overflow-wrap: break-word;
+    min-height: 4rem;
+    height: -webkit-fill-available;
+}
+.item:nth-child(4) {
+    background: #ECA72C !important;
+    text-indent: 1em;
+    min-width: -webkit-fill-available;
+    overflow-wrap: break-word;
+    min-height: 4rem;
+    height: -webkit-fill-available;
+}
