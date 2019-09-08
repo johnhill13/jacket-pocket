@@ -27,6 +27,7 @@ class gameWindow extends Component {
     }
 
     render() {
+        const answer = 'This is the answer passed from gameWindow to Answer';
 
         return(
             <>
@@ -37,7 +38,14 @@ class gameWindow extends Component {
                             pose={this.state.isVisible ? 'visible' : 'hidden'} 
                             /> */}
                         {/* <Question /> */}
-                        <Answer />
+                        <Answer answer={answer}/>
+                        <Answer answer={answer}/>
+                        <Answer answer={answer}/>
+                        <Answer answer={answer}/>
+                        <Answer answer={answer}/>
+                        <Answer answer={answer}/>
+                        <Answer answer={answer}/>
+                        <Answer answer={answer}/>
                         {/* <Final /> */}
                     </Segment>
                 </Container>    

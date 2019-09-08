@@ -31,28 +31,7 @@ class answer extends React.PureComponent {
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
         <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
+          {this.props.answer}
         </Item>
       </Sidebar>
     );
