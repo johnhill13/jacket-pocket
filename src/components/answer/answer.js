@@ -33,9 +33,31 @@ class answer extends React.PureComponent {
         <Item className="item" >
           {this.props.answer}
         </Item>
+        <Item className="item" >
+          {this.props.answer}
+        </Item>
+        <Item className="item" >
+          {this.props.answer}
+        </Item>
+        <Item className="item" >
+          {this.props.answer}
+        </Item>
+        <Item className="item" >
+          {this.props.answer}
+        </Item>
+        <Item className="item" >
+          {this.props.answer}
+        </Item>
+        <Item className="item" >
+          {this.props.answer}
+        </Item>
+        <Item className="item" >
+          {this.props.answer}
+        </Item>
       </Sidebar>
     );
   }
+
 }
 
 export default answer;

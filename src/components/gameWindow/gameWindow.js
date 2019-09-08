@@ -39,13 +39,6 @@ class gameWindow extends Component {
                             /> */}
                         {/* <Question /> */}
                         <Answer answer={answer}/>
-                        <Answer answer={answer}/>
-                        <Answer answer={answer}/>
-                        <Answer answer={answer}/>
-                        <Answer answer={answer}/>
-                        <Answer answer={answer}/>
-                        <Answer answer={answer}/>
-                        <Answer answer={answer}/>
                         {/* <Final /> */}
                     </Segment>
                 </Container>    
