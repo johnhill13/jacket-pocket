@@ -32,7 +32,7 @@ class Question extends React.PureComponent {
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
         <Item className="item" >
-            Question
+         This is a reasonable max length.
         </Item>
         <Form reply>
           <Form.TextArea />

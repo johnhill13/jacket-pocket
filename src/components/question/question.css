@@ -29,28 +29,16 @@ body {
     transform-origin-y: 0%;
     color: white;
   }
+
   .item:nth-child(1) {
-    background: #DB504A !important
-    ;
-  }
-  
-  .item:nth-child(2) {
-    background: #FF6F59
-    ;
-  }
-  
-  .item:nth-child(3) {
-    background: #254441;
-  }
-  
-  .item:nth-child(4) {
-    background: #43AA8B;
-  }
-  
-  .item:nth-child(5) {
-    background: #FFE5AA;
-  }
-  
+    background: #DB504A !important;
+    padding-top: 1em;
+    min-width: -webkit-fill-available;
+    overflow-wrap: break-word;
+    min-height: 4rem;
+    height: -webkit-fill-available;
+    align-self: center;
+}
  div.ui.raised.segment.questions-container {
     display: grid;
 }
