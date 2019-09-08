@@ -29,6 +29,11 @@ body {
   transform-origin-y: 0%;
   color: white;
 }
+div.ui.raised.segment.questions-container {
+  display: grid;
+  height: max-content;
+}
+
 .item:nth-child(1) {
   background: #6D998E !important
   ;
