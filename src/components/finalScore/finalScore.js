@@ -17,7 +17,11 @@ const Item = posed.li({
 });
 
 class score extends React.PureComponent {
-  state = { isOpen: false };
+  state = { 
+    isOpen: false,
+    name: 'currently test name through state',
+    score: 'currently test score through state',
+  };
 
   componentDidMount() {
     setTimeout(this.toggle, 1000);
@@ -31,16 +35,16 @@ class score extends React.PureComponent {
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
         <Item className="item" >
-            Player 1 : AMT of points
+            {this.state.name} : {this.state.score}
         </Item>
         <Item className="item" >
-            Player 2 : AMT of points
+        {this.state.name} : {this.state.score}
         </Item>
         <Item className="item" >
-            Player 3 : AMT of points
+        {this.state.name} : {this.state.score}
         </Item>
         <Item className="item" >
-            Player 4 : AMT of points
+        {this.state.name} : {this.state.score}
         </Item>
       </Sidebar>
     );
