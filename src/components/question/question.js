@@ -68,7 +68,7 @@ class Question extends React.PureComponent {
           {/* <Form.TextArea input type='input' focus placeholder='Type answer here'> */}
             <input type="text" placeholder='Type answer here' onChange={this.handleChange}  />
           {/* </Form.TextArea> */}
-          <Button type='submit' value='Submit' color='yellow' content='Submit Answer'/>
+          <Button value='Submit' color='yellow' content='Submit Answer'/>
         </Form>        
       </Sidebar>
     );
