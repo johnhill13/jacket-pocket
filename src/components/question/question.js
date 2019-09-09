@@ -49,7 +49,6 @@ class Question extends React.PureComponent {
     this.setState({
       value: event.target.value
     })
-    // alert('your answer is:' + this.state.value);
     event.preventDefault();
     console.log(this.state)
   }
