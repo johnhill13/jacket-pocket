@@ -18,13 +18,42 @@ const Item = posed.li({
 });
 
 class Question extends React.PureComponent {
-  state = { isOpen: false };
+  constructor() {
+    super()
+    this.state = { 
+      isOpen: false,
+      question: 'test question through state',
+      value: '',
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }   
 
+  
   componentDidMount() {
     setTimeout(this.toggle, 1000);
   }
 
   toggle = () => this.setState({ isOpen: !this.state.isOpen });
+
+  handleChange(event) {
+    // unverifed need for event.prevetefault();  
+    event.preventDefault();
+    this.setState({
+      value: event.target.value
+    })
+    // console.log(this.state); 
+  }
+
+  handleSubmit(event) {
+    this.setState({
+      value: event.target.value
+    })
+    // alert('your answer is:' + this.state.value);
+    event.preventDefault();
+    console.log(this.state)
+  }
+
 
   render() {
     const { isOpen } = this.state;
@@ -32,11 +61,14 @@ class Question extends React.PureComponent {
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
         <Item className="item" >
-          {this.props.question}
+          {this.state.question}
         </Item>
-        <Form reply>
-          <Form.TextArea />
-          <Button color='yellow' content='Submit Answer'/>
+        <Form type='input' onSubmit={this.handleSubmit}>
+          {/* is it possible to make form text area wram input etc. */}
+          {/* <Form.TextArea input type='input' focus placeholder='Type answer here'> */}
+            <input type="text" placeholder='Type answer here' onChange={this.handleChange}  />
+          {/* </Form.TextArea> */}
+          <Button type='submit' value='Submit' color='yellow' content='Submit Answer'/>
         </Form>        
       </Sidebar>
     );
