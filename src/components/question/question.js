@@ -23,7 +23,7 @@ class Question extends React.PureComponent {
     this.state = { 
       isOpen: false,
       question: 'test question through state',
-      value: '',
+      value: null,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,10 +46,10 @@ class Question extends React.PureComponent {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     this.setState({
       value: event.target.value
     })
-    event.preventDefault();
     console.log(this.state)
   }
 
@@ -62,7 +62,7 @@ class Question extends React.PureComponent {
         <Item className="item" >
           {this.state.question}
         </Item>
-        <Form type='input' onSubmit={this.handleSubmit}>
+        <Form type='text' onSubmit={this.handleSubmit}>
           {/* is it possible to make form text area wram input etc. */}
           {/* <Form.TextArea input type='input' focus placeholder='Type answer here'> */}
             <input type="text" placeholder='Type answer here' onChange={this.handleChange}  />
