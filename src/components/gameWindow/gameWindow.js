@@ -21,12 +21,23 @@ const Box = posed.div({
 class gameWindow extends Component { 
     state = { 
         isVisible: true,
-        players: [{}],
-        round: [{}],
+        game: null,
+        player: null,
+        response: null
      };
 
 
+     updateGame = game => {
+         this.setState({game})
+     }
+     updatePlayer = player => {
+         this.setState({player})
+     }
+     updateResponse = response => {
+         this.setState({response})
+     }
 
+     
     
     componentDidMount() {
 
@@ -49,9 +60,9 @@ class gameWindow extends Component {
                             className="box"
                             pose={this.state.isVisible ? 'visible' : 'hidden'} 
                             /> */}
-                        <NameInput />
-                        {/* <Question question={question}/> */}
-                        {/* <AnswerContainer answer={answer}/> */}
+                        {!this.state.game && <NameInput  updateGame={this.updateGame} updatePlayer={this.updatePlayer}/>}
+                        {this.state.game && !this.state.response && <Question updateResponse={this.updateResponse} updateGame={this.updateGame} game={this.state.game} player={this.state.player}/>}
+                        {this.state.response && <AnswerContainer game={this.state.game} answer={this.state.response[this.state.response.length - 1]}/>}
                         {/* <Final /> */}
                     </Segment>
                 </Container>    

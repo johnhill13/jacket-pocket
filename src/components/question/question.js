@@ -20,11 +20,11 @@ const Item = posed.li({
 });
 
 class Question extends React.PureComponent {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = { 
       isOpen: false,
-      question: 'test question through state',
+      round: this.props.game.rounds[0],
       value: null,
     }
     this.handleChange = this.handleChange.bind(this);
@@ -49,15 +49,14 @@ class Question extends React.PureComponent {
 
   handleSubmit(event) {
     event.preventDefault();
-    axios.post(`${API_URL}/round/`, this.state.value).then(res => {
+    axios.put(`${API_URL}/round/${this.state.round._id}`, {input:this.state.value, player: this.props.player._id, game: this.props.game._id}).then(res => {
       console.log(res.data)
       const answers = res.data.data;
-      this.setState({
-        value: event.target.value
-      })
       // send to another page displaying answers
       // this.props.history.push('/')
-      console.log(res.data)
+      console.log(res.data.data)
+      this.props.updateGame(res.data.data)
+      this.props.updateResponse(res.data.data.rounds[0].responses)
     })
     console.log(this.state)
   }
@@ -69,7 +68,7 @@ class Question extends React.PureComponent {
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
         <Item className="item" >
-          {this.state.question}
+          {this.state.round.question}
         </Item>
         <Form type='text' onSubmit={this.handleSubmit}>
           {/* is it possible to make form text area wram input etc. */}

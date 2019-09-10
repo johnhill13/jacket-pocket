@@ -29,7 +29,7 @@ class answerList extends React.PureComponent {
   render() {
     const { isOpen } = this.props;
     
-    const answerMap = this.props.answers.map(answerList => <Answer key={answerList.id} value={answerList.value}/>)
+    const answerMap = this.props.answers.map(answer => <Answer key={answerList.id} value={answer}/>)
 
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>

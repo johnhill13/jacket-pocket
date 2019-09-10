@@ -50,11 +50,10 @@ class nameInput extends React.PureComponent {
     let playerData = {name:this.state.name, score: 0}
     axios.post(`${API_URL}/player`, playerData).then(res => {
       console.log(res.data.data._id)
+      this.props.updatePlayer(res.data.data);
       axios.post(`${API_URL}/game`, {player: res.data.data._id}).then(res => {
         console.log(res.data.data)
-      this.setState({
-        player: res.data.data
-    })
+        this.props.updateGame(res.data.data);
 })
 
       // send to another page after creating game

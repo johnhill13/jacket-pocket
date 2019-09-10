@@ -11,7 +11,7 @@ class answerContainer extends React.PureComponent {
     super(props)
     this.state = { 
       isOpen: false, 
-      answers: [{}],
+      answers: this.props.game.rounds[0].answers,
       responses: '',
     }
   }
@@ -21,12 +21,12 @@ class answerContainer extends React.PureComponent {
   componentDidMount() {
     setTimeout(this.toggle, 1000);
 
-    axios.post(`${API_URL}/round/:round_id`).then(res => {
-        console.log(res);
-        this.setState({
-          answers: res.data.data.answers
-        })
-    })
+    // axios.post(`${API_URL}/round/:round_id`).then(res => {
+    //     console.log(res);
+    //     this.setState({
+    //       answers: res.data.data.answers
+    //     })
+    // })
   }
 
 
