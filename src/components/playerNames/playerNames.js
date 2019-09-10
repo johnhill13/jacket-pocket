@@ -4,6 +4,8 @@ import { Container, Grid, Image } from 'semantic-ui-react';
 import posed from 'react-pose';
 import '../question/question';
 import './playerNames.css';
+import { API_URL } from '../constants';
+import axios from 'axios';
 
 const Box = posed.div({
     visible: { opacity: 1},
@@ -11,9 +13,37 @@ const Box = posed.div({
 }); 
 
 class playerNames extends Component { 
-    state = { isVisible: true };
+    state = { 
+        isVisible: true,
+        players: [{}],
+        score: null,
+    };  
 
+
+    handleSubmit = event => {
+        event.preventDefault();
+        const playerInfo = {
+            name: this.state.player,
+            score: this.state.score,
+        }
+        axios.post(`${API_URL}/player`, playerInfo)
+        .then(res => {
+            console.log(res);
+        })
+
+    }
+
+
+    
     componentDidMount() {
+
+        axios.get(`${API_URL}/player`).then(res => {
+            console.log(res);
+            this.setState({
+                players: res.data
+            })
+        })
+
         setInterval(() => {
             this.setState(prevState => { return {isVisible: !prevState.isVisible }});
         }, 500);
@@ -24,52 +54,22 @@ class playerNames extends Component {
         return(
             <>
             <Container>
-                    <Grid textAlign='center' columns={4} padded>
-                        <Grid.Row>
-                            <Grid.Column>
-                                <Box
-                                    className=""
-                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                        <div>
-                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
-                                            <span>Player 1</span>
-                                        </div>    
-                                </Box>
-                            </Grid.Column>
-                            <Grid.Column>
-                                <Box
-                                    className=""
-                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                        <div>
-                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
-                                            <span>Player 2</span>
-                                        </div>   
-                                </Box>       
-                            </Grid.Column>
-        
-                            <Grid.Column>
-                                <Box
-                                    className=""
-                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                        <div center>
-                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
-                                            <span>Player 3</span>
-                                        </div>   
-                                </Box>       
-                            </Grid.Column>
-        
-                            <Grid.Column>
-                                <Box
-                                    className=""
-                                    pose={this.state.isVisible ? 'visible' : 'hidden'}>
-                                        <div>
-                                            <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
-                                            <span>Player 4</span>
-                                        </div>   
-                                </Box>       
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+                <Grid textAlign='center' columns={4} padded>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Box
+                                className=""
+                                pose={this.state.isVisible ? 'visible' : 'hidden'}>
+                                <div>
+                                    <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' avatar />
+                                        {/* code goes here to display player names */}
+                                        {/* {this.state.persons.map(person => <span>key={person.id}{person.value}</span>)} */}
+                                        {/* {this.state.players.map(player => (<h1 key={player.id}>{player.name}</h1>))} */}
+                                </div>    
+                            </Box>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
             </Container>
             </>
         );
@@ -78,24 +78,6 @@ class playerNames extends Component {
 
 
 export default playerNames;
-
-
-{/* <Grid columns='equal'>
-    <Grid.Row>
-        <Grid.Column>
-            <Segment>1</Segment>
-        </Grid.Column>
-        <Grid.Column>
-            <Segment>2</Segment>
-        </Grid.Column>
-        <Grid.Column>
-            <Segment>3</Segment>
-        </Grid.Column>
-        <Grid.Column>
-            <Segment>4</Segment>
-        </Grid.Column>
-    </Grid.Row>
-</Grid> */}
 
 
 

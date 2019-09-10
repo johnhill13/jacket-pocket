@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 import posed from 'react-pose';
+import { API_URL } from '../constants';
+import NameInput from '../playerNames/nameInput';
 import Question from '../question/question';
 import AnswerContainer from '../answer/answerContainer';
 import Final from '../finalScore/finalScore';
-import '../question/question';
 import './gameWindow.css';
+import axios from 'axios';
 
 
 
@@ -17,13 +19,23 @@ const Box = posed.div({
 
 
 class gameWindow extends Component { 
-    state = { isVisible: true };
+    state = { 
+        isVisible: true,
+        players: [{}],
+        round: [{}],
+     };
 
 
+
+    
     componentDidMount() {
-        setInterval(() => {
-            this.setState(prevState => { return {isVisible: !prevState.isVisible }});
-        }, 500);
+
+        axios.get(`${API_URL}/game`).then(res => {
+            console.log(res);
+            this.setState({
+                game: res.data
+            })
+        })
     }
 
     render() {
@@ -37,7 +49,8 @@ class gameWindow extends Component {
                             className="box"
                             pose={this.state.isVisible ? 'visible' : 'hidden'} 
                             /> */}
-                        <Question question={question}/>
+                        <NameInput />
+                        {/* <Question question={question}/> */}
                         {/* <AnswerContainer answer={answer}/> */}
                         {/* <Final /> */}
                     </Segment>

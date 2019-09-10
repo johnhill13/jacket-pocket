@@ -3,7 +3,6 @@ import axios from 'axios';
 import { API_URL } from '../constants';
 import posed from 'react-pose';
 import { Form, Button } from 'semantic-ui-react';
-import './question.css';
 
 const Sidebar = posed.ul({
   open: {
@@ -11,21 +10,19 @@ const Sidebar = posed.ul({
     delayChildren: 200,
     staggerChildren: 50
   },
-  closed: { x: '-100%', delay: 300 }
+  closed: { x: ' -100%', delay: 300 }
 });
 
 const Item = posed.li({
   open: { y: 0, opacity: 1 },
-  closed: { y: 20, opacity: 0 }
+  closed: {  y: 20, opacity: 0 }
 });
 
-class Question extends React.PureComponent {
+class nameInput extends React.PureComponent {
   constructor() {
     super()
     this.state = { 
-      isOpen: false,
-      question: 'test question through state',
-      value: null,
+        player: null,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,33 +30,38 @@ class Question extends React.PureComponent {
 
   
   componentDidMount() {
+    
+
     setTimeout(this.toggle, 1000);
   }
 
   toggle = () => this.setState({ isOpen: !this.state.isOpen });
 
   handleChange(event) {
-    // unverifed need for event.prevetefault();  
     event.preventDefault();
     this.setState({
-      value: event.target.value
+      name: event.target.value
     })
     // console.log(this.state); 
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    axios.post(`${API_URL}/round/`, this.state.value).then(res => {
-      console.log(res.data)
-      const answers = res.data.data;
+    let playerData = {name:this.state.name, score: 0}
+    axios.post(`${API_URL}/player`, playerData).then(res => {
+      console.log(res.data.data._id)
+      axios.post(`${API_URL}/game`, {player: res.data.data._id}).then(res => {
+        console.log(res.data.data)
       this.setState({
-        value: event.target.value
-      })
-      // send to another page displaying answers
-      // this.props.history.push('/')
-      console.log(res.data)
+        player: res.data.data
     })
-    console.log(this.state)
+})
+
+      // send to another page after creating game
+      // this.props.history.push('/')
+
+      console.log(this.state)
+    })
   }
 
 
@@ -67,20 +69,17 @@ class Question extends React.PureComponent {
     const { isOpen } = this.state;
 
     return (
-      <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
-        <Item className="item" >
-          {this.state.question}
-        </Item>
-        <Form type='text' onSubmit={this.handleSubmit}>
+        <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
+        <Form method='POST' onSubmit={this.handleSubmit}>
           {/* is it possible to make form text area wram input etc. */}
           {/* <Form.TextArea input type='input' focus placeholder='Type answer here'> */}
-            <input type="text" placeholder='Type answer here' onChange={this.handleChange}  />
+            <input type="text" name="name" placeholder='Type player name' onChange={this.handleChange}  />
           {/* </Form.TextArea> */}
-          <Button value='Submit' color='yellow' content='Submit Answer'/>
+          <Button value='Submit' type="submit" color='yellow' content='Submit Name'/>
         </Form>        
       </Sidebar>
     );
   }
 }
 
-export default Question;
+export default nameInput;
