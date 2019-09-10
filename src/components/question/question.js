@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import { API_URL } from '../constants';
 import posed from 'react-pose';
 import { Form, Button } from 'semantic-ui-react';
 import './question.css';
@@ -47,8 +49,15 @@ class Question extends React.PureComponent {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({
-      value: event.target.value
+    axios.put(`${API_URL}/:round_id`, this.state.value).then(res => {
+      console.log(res.data)
+      const answers = res.data.data;
+      this.setState({
+        value: event.target.value
+      })
+      // send to another page displaying answers
+      // this.props.history.push('/')
+      console.log(res.data)
     })
     console.log(this.state)
   }
