@@ -16,6 +16,7 @@ Full-stack App
 - Popmotion - POSE
 - Semantic UI React
 - Git
+- Trello
 
 ### Wireframes
 
