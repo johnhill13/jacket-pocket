@@ -16,8 +16,6 @@ const Sidebar = posed.ul({
 
 class answerList extends React.PureComponent {
 
-
-  
   render() {
     const { isOpen } = this.props;
     

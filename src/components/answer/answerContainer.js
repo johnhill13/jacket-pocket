@@ -56,10 +56,10 @@ class answerContainer extends React.PureComponent {
     return (
       <>
       <div>
-        <Label circular color='black'> {this.state.player} your current score is: {this.state.score} </Label>
+        <Label circular color='black'> {this.state.player.name} your current score is: {this.state.score} </Label>
       </div>
         <Label color='gray' horizontal> Correct answer is:</Label>
-        <AnswerList answers={this.state.answers} responses={this.state.responses} isOpen={this.state.isOpen}/>
+        <AnswerList answers={this.state.answers} responses={this.state.responses} player={this.state.player} isOpen={this.state.isOpen}/>
       </>
     );
   }
