@@ -5,7 +5,6 @@
 
 Full-stack App
 
-
 ### Technology Used
 
 - MongoDB
@@ -31,6 +30,7 @@ Original available via the project wireframs folder (actual ERD may vary).
 Created for couch gamers in mind, interested in playing with friends from their web enabled devices. Dominate your opponent and see who can score the most points and set a new record.
 
 Currently 1 player, 1 round without including sockets support for multiplayer gameplay.
+- Input your name, input your answer to question, see the score and correct answer update, click restart deleting game and putting you back to input name.
 
 ### Supported Browsers
 
