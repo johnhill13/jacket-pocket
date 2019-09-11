@@ -20,15 +20,15 @@ Full-stack App
 
 ### Wireframes
 
-![1]('./wireframes/home.png')
-![2]('./wireframes/select.png')
-![3]('./wireframes/winner.png')
+![1](./wireframes/home.png)
+![2](./wireframes/select.png)
+![3](./wireframes/winner.png)
 
 Available via the project wireframes folder
 
 ### Entity Relationship Diagram
 
-![4]('./wireframes/jacket-pocket-erd.png')
+![4](./wireframes/jacket-pocket-erd.png)
 
 Original available via the project wireframs folder (actual ERD may vary).
 
