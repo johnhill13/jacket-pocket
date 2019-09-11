@@ -56,7 +56,7 @@ class gameWindow extends Component {
                     <Segment className="questions-container" raised>
                         {!this.state.game && <NameInput  updateGame={this.updateGame} updatePlayer={this.updatePlayer}/>}
                         {this.state.game && !this.state.response && <Question updateResponse={this.updateResponse} updateGame={this.updateGame} game={this.state.game} player={this.state.player}/>}
-                        {this.state.response && !this.state.score && <AnswerContainer game={this.state.game}  answer={this.state.response[this.state.response.length - 1]}/>}
+                        {this.state.response && !this.state.score && <AnswerContainer game={this.state.game} player={this.state.player} answer={this.state.response[this.state.response.length - 1]}/>}
                         {this.state.game && this.state.response  && <Final restartGame={this.restartGame} game={this.state.game} score={this.state.score} player={this.state.player}/>}
                     </Segment>
                 </Container>    
