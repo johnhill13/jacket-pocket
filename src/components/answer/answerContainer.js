@@ -1,18 +1,19 @@
 import React from 'react';
-import posed from 'react-pose';
-import axios from 'axios';
-import { API_URL } from '../constants';
 import './answer.css';
+import { Label } from 'semantic-ui-react';
 import AnswerList from './answerList';
-import AnswersData from './answersData';
+import { thisExpression } from '@babel/types';
+
 
 class answerContainer extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = { 
       isOpen: false, 
+      player: this.props.player.name,
       answers: this.props.game.rounds[0].answers,
-      responses: '',
+      responses: this.props.game.rounds[0].responses,
+      score: 0,
     }
   }
 
@@ -20,21 +21,45 @@ class answerContainer extends React.PureComponent {
 
   componentDidMount() {
     setTimeout(this.toggle, 1000);
-
-    // axios.post(`${API_URL}/round/:round_id`).then(res => {
-    //     console.log(res);
-    //     this.setState({
-    //       answers: res.data.data.answers
-    //     })
-    // })
+    this.compareArr()
   }
 
+  compareArr = () =>{
+    const match = [];
+      for (let index=0; index < this.state.answers.length; index++) {
+        for (let i=0; i < this.state.responses.length; i++) {
+          console.log(this.state.answers[index], this.state.responses[i].input)
+          if (this.state.answers[index] === this.state.responses[i].input) {
+            match.push(this.state.answers[index])
+            console.log('matched')
+            return this.setState(prevState => {
+              return {
+                score: prevState.score + 1
+              }
+            })
+          }
+        }
+      } 
+  }
 
   render() {
+
+    
+  
+
+    // console.log(this.state.answers.length)
+
+    
+    console.log(this.state.answers + ' hello my name is john, this printed here')
     const { isOpen } = this.state;
     
     return (
+      <>
+      <div>
+        <Label circular color='black'> Congratulations {this.state.player} your current score is: {this.state.score} </Label>
+      </div>
         <AnswerList answers={this.state.answers} responses={this.state.responses} isOpen={this.state.isOpen}/>
+      </>
     );
   }
 

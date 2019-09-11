@@ -16,14 +16,17 @@ const Box = posed.div({
     hidden: { opacity: 0}
 }); 
 
-
+const INITAL_STATE ={
+    isVisible: true,
+        game: null,
+        player: null,
+        response: null,
+        score: 0
+}
 
 class gameWindow extends Component { 
     state = { 
-        isVisible: true,
-        game: null,
-        player: null,
-        response: null
+        ...INITAL_STATE
      };
 
 
@@ -36,8 +39,12 @@ class gameWindow extends Component {
      updateResponse = response => {
          this.setState({response})
      }
+     restartGame = () => {
+         axios.delete(`${API_URL}/game/${this.state.game._id}`).then((res)=>{
+            this.setState({...INITAL_STATE})
+         })
+     }
 
-     
     
     componentDidMount() {
 
@@ -50,20 +57,14 @@ class gameWindow extends Component {
     }
 
     render() {
-        const answer = 'This is the answer passed from gameWindow to Answer';
-        const question = 'this is a question passed form gameWindow to Answer';
         return(
             <>
                 <Container>
                     <Segment className="questions-container" raised>
-                        {/* <Box 
-                            className="box"
-                            pose={this.state.isVisible ? 'visible' : 'hidden'} 
-                            /> */}
                         {!this.state.game && <NameInput  updateGame={this.updateGame} updatePlayer={this.updatePlayer}/>}
                         {this.state.game && !this.state.response && <Question updateResponse={this.updateResponse} updateGame={this.updateGame} game={this.state.game} player={this.state.player}/>}
-                        {this.state.response && <AnswerContainer game={this.state.game} answer={this.state.response[this.state.response.length - 1]}/>}
-                        {/* <Final /> */}
+                        {this.state.response && <AnswerContainer game={this.state.game} player={this.state.player} answer={this.state.response[this.state.response.length - 1]}/>}
+                        {this.state.game && this.state.response && this.state.question && <Final restartGame={this.restartGame} game={this.state.game} score={this.state.score} player={this.state.player}/>}
                     </Segment>
                 </Container>    
             </>

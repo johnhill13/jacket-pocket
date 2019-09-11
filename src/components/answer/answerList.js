@@ -16,16 +16,8 @@ const Sidebar = posed.ul({
 
 class answerList extends React.PureComponent {
 
-  // handleSelect(id){
-  //   this.setState{prevState => {
-  //     const answer = prevState.answers.map(answer => {
 
-  //     }) 
-  //     }
-  //   }
-  // }
-
-
+  
   render() {
     const { isOpen } = this.props;
     
