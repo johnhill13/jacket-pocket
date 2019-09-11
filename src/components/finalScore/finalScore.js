@@ -1,5 +1,7 @@
 import React from 'react';
 import posed from 'react-pose';
+import { Button } from 'semantic-ui-react';
+
 import './finalScore.css';
 
 const Sidebar = posed.ul({
@@ -17,10 +19,19 @@ const Item = posed.li({
 });
 
 class score extends React.PureComponent {
-  state = { isOpen: false };
+  state = { 
+    isOpen: false,
+    name: 'currently test name through state',
+    score: 'currently test score through state',
+  };
 
   componentDidMount() {
     setTimeout(this.toggle, 1000);
+  }
+
+  handleClick = () => {
+    console.log('clicked');
+    this.props.restartGame();
   }
 
   toggle = () => this.setState({ isOpen: !this.state.isOpen });
@@ -30,18 +41,10 @@ class score extends React.PureComponent {
 
     return (
       <Sidebar className="sidebar" pose={isOpen ? 'open' : 'closed'}>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
-        <Item className="item" >
-            answer
-        </Item>
+        {/* <Item className="item" >
+            {this.state.name} : {this.state.score}
+        </Item> */}
+        <Button type='submit' onClick={this.handleClick.bind(this)}>Restart</Button>
       </Sidebar>
     );
   }
