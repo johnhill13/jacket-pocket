@@ -8,15 +8,15 @@ Full-stack App
 
 ### Technology Used
 
-MongoDB
-Express
-React
-Node
-Create React App 
-Mongoose
-Popmotion - POSE
-Semantic UI React
-Git
+- MongoDB
+- Express
+- React
+- Node
+- Create React App 
+- Mongoose
+- Popmotion - POSE
+- Semantic UI React
+- Git
 
 ### Wireframes
 
@@ -38,9 +38,9 @@ Chrome
 
 ### Git Repo 
 
-Front (https://github.com/johnhill13/jacket-pocket)
+Frontend (https://github.com/johnhill13/jacket-pocket)
 
-Back (https://github.com/johnhill13/jacket-pocket-backend)
+Backend (https://github.com/johnhill13/jacket-pocket-backend)
 
 ### Deployed
 
@@ -56,4 +56,4 @@ https://jacket-pocket.herokuapp.com
 - Multiple browsers supported
 - Fix custom CSS
 - Create your own question and answer pairs
-- 
+- Ideas? Contributions? Create PR
