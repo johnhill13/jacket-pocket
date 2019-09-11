@@ -9,8 +9,8 @@ class answerContainer extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = { 
-      isOpen: false, 
-      player: this.props.player.name,
+      isOpen: false,
+      player: this.props.player, 
       answers: this.props.game.rounds[0].answers,
       responses: this.props.game.rounds[0].responses,
       score: 0,
@@ -56,8 +56,9 @@ class answerContainer extends React.PureComponent {
     return (
       <>
       <div>
-        <Label circular color='black'> Congratulations {this.state.player} your current score is: {this.state.score} </Label>
+        <Label circular color='black'> {this.state.player} your current score is: {this.state.score} </Label>
       </div>
+        <Label color='gray' horizontal> Correct answer is:</Label>
         <AnswerList answers={this.state.answers} responses={this.state.responses} isOpen={this.state.isOpen}/>
       </>
     );
