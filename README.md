@@ -1,10 +1,9 @@
 
-## Title of the App
-
-Jacket Pocket
+## Jacket Pocket
 
 ### Description
 
+Full-stack App
 
 
 ### Technology Used
@@ -17,6 +16,7 @@ Create React App
 Mongoose
 Popmotion - POSE
 Semantic UI React
+Git
 
 ### Wireframes
 
