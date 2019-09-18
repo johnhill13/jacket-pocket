@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
-import posed from 'react-pose';
-import { API_URL } from '../constants';
+import API_URL from '../constants';
 import NameInput from '../playerNames/nameInput';
 import Question from '../question/question';
 import AnswerContainer from '../answer/answerContainer';
