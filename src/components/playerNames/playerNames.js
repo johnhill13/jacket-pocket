@@ -4,7 +4,7 @@ import { Container, Grid, Image } from 'semantic-ui-react';
 import posed from 'react-pose';
 import '../question/question';
 import './playerNames.css';
-import { API_URL } from '../constants';
+import API_URL from '../constants';
 import axios from 'axios';
 
 const Box = posed.div({
