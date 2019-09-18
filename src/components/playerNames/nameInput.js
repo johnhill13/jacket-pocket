@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { API_URL } from '../constants';
+import API_URL from '../constants';
 import posed from 'react-pose';
 import { Form, Button } from 'semantic-ui-react';
 
