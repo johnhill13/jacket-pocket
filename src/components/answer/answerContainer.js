@@ -2,7 +2,6 @@ import React from 'react';
 import './answer.css';
 import { Label } from 'semantic-ui-react';
 import AnswerList from './answerList';
-import { thisExpression } from '@babel/types';
 
 
 class answerContainer extends React.PureComponent {
@@ -51,7 +50,7 @@ class answerContainer extends React.PureComponent {
 
     
     console.log(this.state.answers + ' hello my name is john, this printed here')
-    const { isOpen } = this.state;
+    // const { isOpen } = this.state;
     
     return (
       <>

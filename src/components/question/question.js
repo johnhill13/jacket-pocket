@@ -51,7 +51,7 @@ class Question extends React.PureComponent {
     event.preventDefault();
     axios.put(`${API_URL}/round/${this.state.round._id}`, {input:this.state.value, player: this.props.player._id, game: this.props.game._id}).then(res => {
       console.log(res.data)
-      const answers = res.data.data;
+      // const answers = res.data.data;
       // send to another page displaying answers
       // this.props.history.push('/')
       console.log(res.data.data)

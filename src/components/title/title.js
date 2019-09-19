@@ -16,12 +16,12 @@ const title = () => {
     return (
 
         <Container>
-            <Header as='h1' textAlign='center justified' className="jacket-pocket" >
+            <Header as='h1' textAlign='center' className="jacket-pocket" >
                 <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
                     Jacket Pocket
                 </SplitText>
             </Header>
-            <Header as='h4' textAlign='center justified' className="jacket-pocket" color='grey'>
+            <Header as='h4' textAlign='center' className="jacket-pocket" color='grey'>
                 <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
                     By John
                 </SplitText>

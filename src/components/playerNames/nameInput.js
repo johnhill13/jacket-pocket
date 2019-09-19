@@ -13,11 +13,6 @@ const Sidebar = posed.ul({
   closed: { x: ' -100%', delay: 300 }
 });
 
-const Item = posed.li({
-  open: { y: 0, opacity: 1 },
-  closed: {  y: 20, opacity: 0 }
-});
-
 class nameInput extends React.PureComponent {
   constructor() {
     super()
