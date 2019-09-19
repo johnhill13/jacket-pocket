@@ -38,15 +38,15 @@ class gameWindow extends Component {
      }
 
     
-    componentDidMount() {
+    // componentDidMount() {
 
-        axios.get(`${API_URL}/game`).then(res => {
-            console.log(res);
-            this.setState({
-                game: res.data
-            })
-        })
-    }
+    //     axios.get(`${API_URL}/game`).then(res => {
+    //         console.log(res);
+    //         this.setState({
+    //             game: res.data
+    //         })
+    //     })
+    // }
 
     render() {
         return(
